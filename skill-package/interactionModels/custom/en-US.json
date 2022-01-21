@@ -1,0 +1,791 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "leankit features",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "That doesn\u0027t sound right. Don\u0027t do it",
+            "wait don\u0027t",
+            "Don\u0027t do it",
+            "cancel it",
+            "nevermind",
+            "I don\u0027t want to create card anymore",
+            "I changed my mind"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "JokeIntent",
+          "slots": [],
+          "samples": [
+            "i want to laugh",
+            "amuse me with a joke",
+            "tell me a joke"
+          ]
+        },
+        {
+          "name": "NumberOfCards",
+          "slots": [],
+          "samples": [
+            "How much work is piled on in the leankit board",
+            "How many cards are in the board",
+            "What is the number of cards in the leankit board",
+            "Number of cards in the board",
+            "Tell me the number of cards in the board"
+          ]
+        },
+        {
+          "name": "CardsAssignedToMe",
+          "slots": [
+            {
+              "name": "user",
+              "type": "username",
+              "samples": [
+                "user\u0027s name is {user}",
+                "it is {user}"
+              ]
+            }
+          ],
+          "samples": [
+            "list down the cards assigned to {user}",
+            "tell me the cards assigned to {user}",
+            "What are the cards assigned to {user}"
+          ]
+        },
+        {
+          "name": "NumberOfCardsAssignedToUser",
+          "slots": [
+            {
+              "name": "user",
+              "type": "username",
+              "samples": [
+                "{user}"
+              ]
+            }
+          ],
+          "samples": [
+            "just want to know the number of cards assigned to {user}",
+            "number of cards on the board for {user}",
+            "can you tell me the number of cards assigned to {user}"
+          ]
+        },
+        {
+          "name": "CreateCard",
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName",
+              "samples": [
+                "its {card_name}",
+                "ohh its {card_name} and type is {card_type}",
+                "{card_name} is the card name",
+                "Card name is {card_name}"
+              ]
+            },
+            {
+              "name": "card_type",
+              "type": "AMAZON.FirstName"
+            }
+          ],
+          "samples": [
+            "Can you create a card on leankit board with name {card_name} and type {card_type}",
+            "please create a card with name {card_name}",
+            "Create a card please",
+            "Can you create a card",
+            "create a card with name {card_name}",
+            "can you create a card  {card_name} of type {card_type}",
+            "Create a card of type {card_type}",
+            "create a card {card_name}",
+            "can you create a card with name {card_name}",
+            "Yes create a card with name {card_name}",
+            "Create a card {card_name} of type {card_type}",
+            "Can you create a card {card_name}"
+          ]
+        },
+        {
+          "name": "UpdateCardType",
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName"
+            },
+            {
+              "name": "card_type",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "it is {card_type}",
+                "card type is {card_type}",
+                "{card_type}"
+              ]
+            }
+          ],
+          "samples": [
+            "Update card type",
+            "Change card type",
+            "Change the card type of the card {card_name} to {card_type}",
+            "Change the card type to {card_type}",
+            "update the card type of the card {card_name}",
+            "Update the card type of the card",
+            "Update the card {card_name} to card type {card_type}",
+            "Update card type to {card_type}",
+            "Can you update the card {card_name} to card type {card_type}"
+          ]
+        },
+        {
+          "name": "UpdateCardLane",
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName"
+            },
+            {
+              "name": "lane_name",
+              "type": "BoardLane",
+              "samples": [
+                "ohh its {lane_name}",
+                "it is {lane_name}",
+                "lane name is {lane_name}",
+                "Move it to {lane_name}",
+                "I want to move it to {lane_name}",
+                "{lane_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "Move card {card_name}",
+            "Move to {lane_name}",
+            "Move the card {card_name}",
+            "Move the card {card_name} to {lane_name}",
+            "Can you move the card {card_name} to {lane_name}"
+          ]
+        },
+        {
+          "name": "AssignUsersToCard",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "username",
+              "samples": [
+                "Card {card_name} to be assigne dto {user_name}",
+                "Card should be assigned to {user_name}",
+                "it is {user_name}",
+                "{user_name}",
+                "User name is {user_name}",
+                "User\u0027s name is {user_name}"
+              ]
+            },
+            {
+              "name": "card_name",
+              "type": "CardName"
+            }
+          ],
+          "samples": [
+            "Reassign user {user_name} to card {card_name}",
+            "Assign user to card",
+            "Assign user to card {card_name}",
+            "Give the card to {user_name}",
+            "Assign card to {user_name}",
+            "Assign card {card_name} to user {user_name}",
+            "Assign user {user_name} to the card {card_name}"
+          ]
+        },
+        {
+          "name": "AddUsersToCard",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "username",
+              "samples": [
+                "User name is {user_name}",
+                "{user_name}",
+                "it is {user_name}",
+                "Card should be assigned to {user_name}",
+                "Card {card_name} to be assigne dto {user_name}"
+              ]
+            },
+            {
+              "name": "card_name",
+              "type": "CardName"
+            }
+          ],
+          "samples": [
+            "could you please add user {user_name} to the card {card_name}",
+            "can you add a user to the card {card_name}",
+            "can you add a user to the card",
+            "please add {user_name} to the card",
+            "please add  {user_name} to the card {card_name}",
+            "can you add {user_name} to the card {card_name}",
+            "Add user {user_name}",
+            "Add user {user_name} to card",
+            "Add user to card {card_name}",
+            "Add user {user_name} to card {card_name}"
+          ]
+        },
+        {
+          "name": "CardStatus",
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName"
+            }
+          ],
+          "samples": [
+            "Status of card with name {card_name}",
+            "Can you tell me the status of the card {card_name}",
+            "What is the status of card",
+            "Status of card {card_name}",
+            "What is the status of card {card_name}"
+          ]
+        },
+        {
+          "name": "NewCardsAssigned",
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "username",
+              "samples": [
+                "{user_name}",
+                "it is {user_name}",
+                "user is {user_name}",
+                "user name is {user_name}"
+              ]
+            }
+          ],
+          "samples": [
+            "cards assigned to me today",
+            "What are the new cards assigned to user {user_name} today",
+            "What are the new cards assigned to user {user_name}",
+            "What are the new cards assigned to {user_name}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "rajesh"
+              }
+            },
+            {
+              "name": {
+                "value": "me"
+              }
+            },
+            {
+              "name": {
+                "value": "geetika"
+              }
+            }
+          ],
+          "name": "username"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Handle notification on attempted provision when multiple globalTenantIds already in existence"
+              }
+            },
+            {
+              "name": {
+                "value": "Handle existing lk/okrs precedence logic when attempting to provision a tenant from platform admin"
+              }
+            },
+            {
+              "name": {
+                "value": "IntHub Error Reporting"
+              }
+            },
+            {
+              "name": {
+                "value": "What should we do during de-provision if a non-PVID managed IntHub deployment remains?"
+              }
+            },
+            {
+              "name": {
+                "value": "Planview ID Activated Button Does Not Go Back Activate Planview ID When Clicking It Via Impersonation"
+              }
+            },
+            {
+              "name": {
+                "value": "Medical College of Wisconsin is saying that their users are being ask to enter a password when the entire org is using SSO."
+              }
+            },
+            {
+              "name": {
+                "value": "PlanviewID:  Active user gets expired link while enabling password login"
+              }
+            },
+            {
+              "name": {
+                "value": "Trying out a long card name to make sure it gets accepted as slot"
+              }
+            },
+            {
+              "name": {
+                "value": "Enhancement: Add new feature"
+              }
+            },
+            {
+              "name": {
+                "value": "[E1-PP] Tests are failing because of API issue"
+              }
+            },
+            {
+              "name": {
+                "value": "create a new feature"
+              }
+            },
+            {
+              "name": {
+                "value": "tests failing with issue xyz"
+              }
+            },
+            {
+              "name": {
+                "value": "testing one"
+              }
+            }
+          ],
+          "name": "CardName"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Configuring agility boards"
+              }
+            },
+            {
+              "name": {
+                "value": "Recently Finished"
+              }
+            },
+            {
+              "name": {
+                "value": "Under Review"
+              }
+            },
+            {
+              "name": {
+                "value": "Doing Now"
+              }
+            },
+            {
+              "name": {
+                "value": "Ready to Start"
+              }
+            },
+            {
+              "name": {
+                "value": "Approved"
+              }
+            },
+            {
+              "name": {
+                "value": "New Requests"
+              }
+            },
+            {
+              "name": {
+                "value": "Not Started - Future Work"
+              }
+            }
+          ],
+          "name": "BoardLane"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CardsAssignedToMe",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user",
+              "type": "username",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1159643536963.549797077743"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1319240744165.874882966176.779866940535"
+                }
+              ]
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "NumberOfCardsAssignedToUser",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user",
+              "type": "username",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.346159195847.521208730494"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.346159195847.521208730494.1601093697109"
+                }
+              ]
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "CreateCard",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1080482539953"
+          },
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1080482539953.999984402122"
+              }
+            },
+            {
+              "name": "card_type",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "UpdateCardType",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "card_type",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.719311477023.1191853291627"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UpdateCardLane",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "card_name",
+              "type": "CardName",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "lane_name",
+              "type": "BoardLane",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.326268743960.1141423323078"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AssignUsersToCard",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "username",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1152328679099.917888096514"
+              }
+            },
+            {
+              "name": "card_name",
+              "type": "CardName",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "AddUsersToCard",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "username",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.207799547505.932792286442"
+              }
+            },
+            {
+              "name": "card_name",
+              "type": "CardName",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ]
+        },
+        {
+          "name": "NewCardsAssigned",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "user_name",
+              "type": "username",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.805690645064.357996034081"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1159643536963.549797077743",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "hey could you tell me the user\u0027s name"
+          },
+          {
+            "type": "PlainText",
+            "value": "please mention the user\u0027s first name"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which user\u0027s cards do you need from the board"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.346159195847.521208730494",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "could you tell me the user\u0027s name whose number of cards you want to know"
+          },
+          {
+            "type": "PlainText",
+            "value": "user\u0027s name"
+          },
+          {
+            "type": "PlainText",
+            "value": "for which user"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1319240744165.874882966176.779866940535",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "i\u0027m not aware of the user name you mentioned. Can you try again?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.346159195847.521208730494.1601093697109",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "i\u0027m not aware of the user name you mentioned. Can you try again?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1080482539953.999984402122",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "card name please"
+          },
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the name of the card you want to create"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1080482539953",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure you want to create a card with name {card_name}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.170701211561.1351262946601",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Card type please"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please tell me the card type to be updated to"
+          },
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the card type to be updated to"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.719311477023.1191853291627",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the card type to be updated to"
+          },
+          {
+            "type": "PlainText",
+            "value": "Please tell me the card type to be updated to"
+          },
+          {
+            "type": "PlainText",
+            "value": "Card type please"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.326268743960.1141423323078",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What lane?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is the Lane name?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Lane name?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the lane you want to move?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1152328679099.917888096514",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "User\u0027s name please"
+          },
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the user to whom the card has to be assigned?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the user to whom you want to assign the card {card_name}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.207799547505.932792286442",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the user to whom you want to assign the card {card_name}"
+          },
+          {
+            "type": "PlainText",
+            "value": "Can you tell me the user to whom the card has to be assigned?"
+          },
+          {
+            "type": "PlainText",
+            "value": "User\u0027s name please"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.805690645064.357996034081",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Could you tell me the user name"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "52"
+}
